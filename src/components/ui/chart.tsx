@@ -92,9 +92,24 @@ ${colorConfig
 
 const ChartTooltip = RechartsPrimitive.Tooltip;
 
+type ChartTooltipItem = {
+  dataKey?: string | number;
+  name?: string | number;
+  value?: string | number;
+  type?: string;
+  color?: string;
+  payload?: { fill?: string; [key: string]: unknown };
+};
+
+type ChartTooltipPayload = ChartTooltipItem[];
+
 const ChartTooltipContent = React.forwardRef<
   HTMLDivElement,
-  React.ComponentProps<typeof RechartsPrimitive.Tooltip> &
+  Omit<React.ComponentProps<typeof RechartsPrimitive.Tooltip>, "label" | "payload"> & {
+    active?: boolean;
+    label?: string | number;
+    payload?: ChartTooltipPayload;
+  } &
     React.ComponentProps<"div"> & {
       hideLabel?: boolean;
       hideIndicator?: boolean;
@@ -138,7 +153,7 @@ const ChartTooltipContent = React.forwardRef<
 
       if (labelFormatter) {
         return (
-          <div className={cn("font-medium", labelClassName)}>{labelFormatter(value, payload)}</div>
+          <div className={cn("font-medium", labelClassName)}>{labelFormatter(value, payload as never)}</div>
         );
       }
 
@@ -170,7 +185,7 @@ const ChartTooltipContent = React.forwardRef<
             .map((item, index) => {
               const key = `${nameKey || item.name || item.dataKey || "value"}`;
               const itemConfig = getPayloadConfigFromPayload(config, item, key);
-              const indicatorColor = color || item.payload.fill || item.color;
+              const indicatorColor = color || item.payload?.fill || item.color;
 
               return (
                 <div
@@ -181,7 +196,7 @@ const ChartTooltipContent = React.forwardRef<
                   )}
                 >
                   {formatter && item?.value !== undefined && item.name ? (
-                    formatter(item.value, item.name, item, index, item.payload)
+                    formatter(item.value, item.name, item as never, index, item.payload as never)
                   ) : (
                     <>
                       {itemConfig?.icon ? (
@@ -222,7 +237,7 @@ const ChartTooltipContent = React.forwardRef<
                         </div>
                         {item.value && (
                           <span className="font-mono font-medium tabular-nums text-foreground">
-                            {item.value.toLocaleString()}
+                            {String(item.value).toLocaleString()}
                           </span>
                         )}
                       </div>
@@ -240,10 +255,19 @@ ChartTooltipContent.displayName = "ChartTooltip";
 
 const ChartLegend = RechartsPrimitive.Legend;
 
+type ChartLegendPayload = Array<{
+  dataKey?: string | number;
+  value?: string | number;
+  color?: string;
+  type?: string;
+}>;
+
 const ChartLegendContent = React.forwardRef<
   HTMLDivElement,
   React.ComponentProps<"div"> &
-    Pick<RechartsPrimitive.LegendProps, "payload" | "verticalAlign"> & {
+    {
+      payload?: ChartLegendPayload;
+      verticalAlign?: RechartsPrimitive.LegendProps["verticalAlign"];
       hideIcon?: boolean;
       nameKey?: string;
     }
