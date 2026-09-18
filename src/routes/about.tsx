@@ -8,15 +8,15 @@ import galleryCommunity from "../assets/gallery-community.jpg";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About — Gospel Pillars Nigeria 2 Division" },
+      { title: "About — Gospel Pillars Campus Ministry" },
       {
         name: "description",
         content:
-          "Learn about the vision, leadership, and chapters of Gospel Pillars Nigeria 2 Division, a church family growing through worship, teaching, and spiritual transformation.",
+          "Learn about the vision, leadership, and chapters of Gospel Pillars Campus Ministry (Nigeria 2 Division) , a church family growing through worship, teaching, and spiritual transformation.",
       },
       {
         property: "og:title",
-        content: "About Gospel Pillars Nigeria 2 Division",
+        content: "About Gospel Pillars Campus Ministry",
       },
       {
         property: "og:description",
@@ -143,10 +143,8 @@ function AboutPage() {
                 </p>
                 <div className="mt-7 space-y-4 text-lg leading-8 text-sand/75">
                   <p>
-                    Apostle Barney Bashorun leads Gospel Pillars Nigeria 2
-                    Division, serving the churches, communities, and
-                    fellowships entrusted to this growing expression of the
-                    ministry.
+                    Apostle Barney Bashorun leads Gospel Pillars Campus Ministry (Nigeria 2 Division), serving the churches, communities, and fellowships entrusted to this growing expression of the ministry. His role is to provide pastoral direction, strengthen leaders, and help carry the ministry’s vision into new communities, from local churches to campus fellowships. Under his leadership, Nigeria 2 Division continues to grow through worship, teaching, fellowship, and spiritual transformation.
+                    
                   </p>
                   <p>
                     His role is to provide pastoral direction, strengthen

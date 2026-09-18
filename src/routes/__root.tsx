@@ -79,9 +79,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Gospel Pillars Nigeria 2 Division" },
+      { title: "Gospel Pillars Campus Ministry" },
       { name: "description", content: "A church family growing through worship, teaching, and spiritual transformation across Nigeria and Africa." },
-      { name: "author", content: "Gospel Pillars Nigeria 2 Division" },
+      { name: "author", content: "Gospel Pillars Campus Ministry" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:site", content: "@GospelPillars" },

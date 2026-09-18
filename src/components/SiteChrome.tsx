@@ -15,7 +15,7 @@ export function SiteHeader() {
   return (
     <header className="site-header">
       <div className="site-container flex h-20 items-center justify-between gap-6">
-        <Link to="/" className="brand-lockup" aria-label="Gospel Pillars Nigeria 2 Division home">
+        <Link to="/" className="brand-lockup" aria-label="Gospel Pillars Campus Ministry home">
           <img src={gpclogo} alt="Gospel Pillars" className="brand-logo" width="56" height="56" />
           <span className="leading-none">
             <span className="block font-display text-lg text-ink">GOSPEL PILLARS</span>
@@ -80,7 +80,7 @@ export function SiteFooter() {
           </div>
         </div>
         <div className="mt-14 flex flex-wrap justify-between gap-3 border-t border-sand/15 pt-7 text-xs text-sand/50">
-          <p>© 2026 Gospel Pillars Nigeria 2 Division.</p><p>Built for every community.</p>
+          <p>© 2026 Gospel Pillars Campus Ministry.</p><p>Built for every community.</p>
         </div>
       </div>
     </footer>

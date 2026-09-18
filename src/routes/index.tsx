@@ -12,9 +12,9 @@ import ugenius from "../assets/ugenius.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({ meta: [
-    { title: "Gospel Pillars Nigeria 2 Division — Rooted in the Word" },
-    { name: "description", content: "Discover Gospel Pillars Nigeria 2 Division, a church family growing through worship, teaching, and spiritual transformation." },
-    { property: "og:title", content: "Gospel Pillars Nigeria 2 Division" },
+    { title: "Gospel Pillars Campus Ministry — Rooted in the Word" },
+    { name: "description", content: "Discover Gospel Pillars Campus Ministry, a church family growing through worship, teaching, and spiritual transformation." },
+    { property: "og:title", content: "Gospel Pillars Campus Ministry" },
     { property: "og:description", content: "Rooted in the Word, at home in every community." },
     { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary_large_image" },
   ]}), component: HomePage,

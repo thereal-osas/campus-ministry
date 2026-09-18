@@ -6,15 +6,15 @@ import heroPraise from "../assets/hero-praise.jpg";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — Gospel Pillars Nigeria 2 Division" },
+      { title: "Contact — Gospel Pillars Campus Ministry" },
       {
         name: "description",
         content:
-          "Contact Gospel Pillars Nigeria 2 Division or ask about a church or fellowship near you.",
+          "Contact Gospel Pillars Campus Ministry or ask about a church or fellowship near you.",
       },
       {
         property: "og:title",
-        content: "Contact Gospel Pillars Nigeria 2 Division",
+        content: "Contact Gospel Pillars Campus Ministry",
       },
       {
         property: "og:description",
