@@ -3,7 +3,8 @@ import { ArrowRight } from "lucide-react";
 import { Reveal } from "../components/Reveal";
 import heroStudy from "../assets/hero-study.jpg";
 import galleryChoir from "../assets/gallery-choir.jpg";
-import galleryCommunity from "../assets/gallery-community.jpg";
+// import galleryCommunity from "../assets/gallery-community.jpg";
+import apstBarney from "../assets/apst_barney.jpeg";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -125,7 +126,7 @@ function AboutPage() {
             <div className="grid items-center gap-8 md:grid-cols-12 md:gap-12">
               <Reveal className="md:col-span-5">
                 <img
-                  src={galleryCommunity}
+                  src={apstBarney}
                   alt="Gospel Pillars members fellowshipping together"
                   loading="lazy"
                   width="1024"
