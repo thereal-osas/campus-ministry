@@ -30,7 +30,6 @@ export function SiteHeader() {
             </Link>
           ))}
           <Link to="/" hash="chapters" className="nav-link">Locations</Link>
-          <Link to="/" hash="gallery" className="nav-link">Gallery</Link>
         </nav>
 
         <Link to="/contact" className="button-outline hidden sm:inline-flex">Find a location</Link>
@@ -42,7 +41,6 @@ export function SiteHeader() {
         <nav className="mobile-nav md:hidden" aria-label="Mobile navigation">
           {links.map((link) => <Link key={link.to} to={link.to} onClick={() => setOpen(false)}>{link.label}</Link>)}
           <Link to="/" hash="chapters" onClick={() => setOpen(false)}>Locations</Link>
-          <Link to="/" hash="gallery" onClick={() => setOpen(false)}>Gallery</Link>
         </nav>
       )}
     </header>
@@ -67,7 +65,7 @@ export function SiteFooter() {
           <div className="md:col-span-3">
             <p className="eyebrow text-gold">Explore</p>
             <div className="mt-5 grid gap-3 text-sm text-sand/80">
-              <Link to="/about">About us</Link><Link to="/" hash="chapters">Locations</Link><Link to="/" hash="gallery">Gallery</Link>
+              <Link to="/about">About us</Link><Link to="/" hash="chapters">Locations</Link><Link to="/contact">Contact</Link>
             </div>
           </div>
           <div className="md:col-span-3">

@@ -9,6 +9,8 @@ import heroWorship from "../assets/hero-worship.jpg";
 import heroStudy from "../assets/hero-study.jpg";
 import heroPraise from "../assets/hero-praise.jpg";
 import ugenius from "../assets/ugenius.jpg";
+import declaration from "../assets/declaration.png";
+import gloryOverflowDominion from "../assets/glory-overflow-dominion.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({ meta: [
@@ -40,13 +42,21 @@ function HomePage() {
     </section>
 
     <section className="bg-sand py-20 md:py-28">
-      <div className="site-container grid gap-10 md:grid-cols-12 md:gap-16">
-        <Reveal className="md:col-span-4"><p className="eyebrow text-gold">Who we are</p><h2 className="mt-4 max-w-sm font-display text-4xl leading-tight text-ink md:text-5xl">A church family growing across Nigeria.</h2></Reveal>
-        <Reveal className="md:col-span-8"><p className="max-w-3xl text-xl leading-9 text-ink/80">Gospel Pillars is a church family growing through worship, teaching, and spiritual transformation. In churches, communities, and campus fellowships, our chapters create space for people to know Jesus, find family, and grow into purpose.</p>
-          <div className="mt-10 grid border-y border-brand/15 sm:grid-cols-3">
-            {[['01','The Word','Faithful teaching that forms a steady life.'],['02','Community','Friendships that carry you through the week.'],['03','Discipleship','Growing into the life Jesus invites.']].map(([n,t,d]) => <div key={n} className="border-brand/15 py-6 sm:border-r sm:px-6 first:pl-0 last:border-r-0"><span className="font-mono text-xl text-gold">{n}</span><h3 className="mt-3 font-display text-xl text-ink">{t}</h3><p className="mt-2 text-sm leading-6 text-ink/60">{d}</p></div>)}
-          </div>
+      <div className="site-container grid items-start gap-10 md:grid-cols-12 md:gap-16">
+        <Reveal className="md:col-span-4"><p className="eyebrow text-gold">Who we are</p><div className="principles-list mt-8">{[['01','The Word','Faithful teaching that forms a steady life.'],['02','Community','Friendships that carry you through the week.'],['03','Discipleship','Growing into the life Jesus invites.']].map(([n,t,d]) => <div key={n} className="principle-item"><span>{n}</span><div><h3>{t}</h3><p>{d}</p></div></div>)}</div></Reveal>
+        <Reveal className="md:col-span-8"><h2 className="max-w-3xl font-display text-4xl leading-tight text-ink md:text-5xl">A church family growing across Nigeria.</h2><p className="mt-6 max-w-3xl text-xl leading-9 text-ink/80">Gospel Pillars is a church family growing through worship, teaching, and spiritual transformation. In churches, communities, and campus fellowships, our chapters create space for people to know Jesus, find family, and grow into purpose.</p><div className="service-cards mt-10 max-w-3xl"><div className="service-card"><p className="eyebrow text-gold">Sundays · 4:00 PM</p><h3>Sunday Worship Service</h3><p>Come ready for heartfelt worship, prayer, the Word, and a welcoming church family.</p></div><div className="service-card"><p className="eyebrow text-gold">Wednesdays · 6:00 PM</p><h3>Midweek Service</h3><p>Let the Word go to work in the middle of your week.</p></div></div>
         </Reveal>
+      </div>
+    </section>
+
+    <section className="word-year-section bg-brand py-20 md:py-28">
+      <div className="site-container">
+        <Reveal><p className="eyebrow text-gold">Word for the year</p><h2 className="mt-4 max-w-3xl font-display text-4xl leading-tight text-sand md:text-6xl">Glory, Overflow &amp; Dominion.</h2><p className="mt-5 max-w-2xl text-lg leading-8 text-sand/75">A year of God, marked by declaration, praise, and the confidence to walk in the purpose He has given us.</p></Reveal>
+        <div className="word-year-layout mt-12">
+          <Reveal className="word-year-copy"><p className="eyebrow text-gold">The year of God</p><h3>Glory, Overflow &amp; Dominion.</h3><blockquote>“And God said, Let us make man in our image, after our likeness: and let them have dominion...”</blockquote><cite>Genesis 1:26</cite></Reveal>
+          <Reveal className="word-year-art"><img src={gloryOverflowDominion} alt="2026 Word for the Year: Glory, Overflow and Dominion" width="1499" height="2000" className="word-year-image" /></Reveal>
+          <Reveal className="word-year-declaration"><img src={declaration} alt="My Declaration for 2026" width="1024" height="576" className="declaration-image" /></Reveal>
+        </div>
       </div>
     </section>
 
@@ -62,7 +72,7 @@ function HomePage() {
 
     <section className="bg-sand py-20 md:py-28"><div className="site-container"><Reveal><p className="eyebrow text-gold">The rhythm of campus life</p><h2 className="mt-4 max-w-2xl font-display text-4xl text-ink md:text-5xl">Gather. Grow. Go.</h2></Reveal><div className="mt-12 divide-y divide-brand/15 border-y border-brand/15">{[["Weekly","Bible study & prayer","A thoughtful space for Scripture, questions, prayer, and friendships."],["Every term","Campus praise nights","Students from across faculties gathering for worship and the Word."],["Across chapters","Leadership & outreach","Equipping students to serve their campus and carry Christ everywhere."]].map(([date,title,copy])=><Reveal key={title} className="grid gap-3 py-7 md:grid-cols-12 md:items-center"><span className="font-mono text-xs uppercase text-gold md:col-span-2">{date}</span><h3 className="font-display text-2xl text-ink md:col-span-4">{title}</h3><p className="text-sm leading-6 text-ink/60 md:col-span-6">{copy}</p></Reveal>)}</div></div></section>
 
-    <section className="bg-verdant py-20 md:py-28"><div className="site-container grid items-center gap-10 md:grid-cols-12"><Reveal className="md:col-span-7"><p className="eyebrow text-sand/70">U-Genius</p><h2 className="mt-4 max-w-2xl font-display text-4xl leading-tight text-sand md:text-5xl">Faith, creativity and bright ideas for a new generation.</h2><p className="mt-6 max-w-2xl text-lg leading-8 text-sand/80">U-Genius celebrates student potential through learning, creativity, media and purposeful projects. It is a place for young people to discover gifts and put excellent ideas to work.</p><a href="#" className="mt-8 button-primary">Visit U-Genius <ArrowRight size={16}/></a></Reveal><Reveal className="md:col-span-5"><img src={ugenius} alt="Students working together in a creative studio" loading="lazy" width={1024} height={1024} className="aspect-square w-full rounded-lg object-cover"/></Reveal></div></section>
+    <section className="bg-brand py-20 md:py-28"><div className="site-container grid items-center gap-10 md:grid-cols-12"><Reveal className="md:col-span-7"><p className="eyebrow text-gold">U-Genius</p><h2 className="mt-4 max-w-2xl font-display text-4xl leading-tight text-sand md:text-5xl">Unlock your academic genius within.</h2><p className="mt-6 max-w-2xl text-lg leading-8 text-sand/80">U-Genius raises a generation of scholars who pursue academic excellence, lead with character, and create meaningful impact through mentorship, community, and skill-building.</p><a href="https://www.ugenius.ng/" target="_blank" rel="noreferrer" className="mt-8 button-primary">Visit U-Genius <ArrowRight size={16}/></a></Reveal><Reveal className="md:col-span-5"><img src={ugenius} alt="Students working together in a creative studio" loading="lazy" width={1024} height={1024} className="aspect-square w-full rounded-lg object-cover"/></Reveal></div></section>
 
     <section id="gallery" className="gallery-section bg-sand-deep py-20 md:py-28"><div className="site-container"><Reveal><p className="eyebrow text-gold">Gallery</p><h2 className="mt-4 font-display text-4xl text-ink md:text-5xl">Moments from the movement.</h2></Reveal></div><div className="gallery-marquee" aria-label="Gospel Pillars gallery"><div className="gallery-track">{[...galleryImages, ...galleryImages].map((image, index) => <img key={`${image.src}-${index}`} src={image.src} alt={image.alt} loading="lazy" width={1024} height={1280} className="gallery-image" />)}</div></div></section>
   </>;
