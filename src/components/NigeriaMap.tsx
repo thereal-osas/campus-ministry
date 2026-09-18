@@ -1,12 +1,14 @@
 import nigeriaMap from "@svg-maps/nigeria";
 import { chapters } from "../data/chapters";
 
+type NigeriaLocation = { id: string; name: string; path: string };
+
 export function NigeriaMap() {
   return (
     <div className="map-stage" aria-label="Chapter locations across Nigeria">
       <svg viewBox={nigeriaMap.viewBox} className="nigeria-map" role="img" aria-label="Map of Nigeria showing chapter locations">
         <g className="nigeria-states">
-          {nigeriaMap.locations.map((location) => (
+          {(nigeriaMap.locations as NigeriaLocation[]).map((location) => (
             <path key={location.id} d={location.path} aria-label={location.name} />
           ))}
         </g>

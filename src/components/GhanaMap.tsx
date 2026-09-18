@@ -1,5 +1,7 @@
 import nigeriaMap from "@svg-maps/nigeria";
 
+type NigeriaLocation = { id: string; name: string; path: string };
+
 const markers = [
   { name: "University of Lagos", city: "Lagos", x: 82, y: 430 },
   { name: "University of Ibadan", city: "Ibadan", x: 110, y: 382 },
@@ -16,7 +18,7 @@ export function NigeriaMap() {
     <div className="map-stage" aria-label="Chapter locations across Nigeria">
       <svg viewBox={nigeriaMap.viewBox} className="nigeria-map" role="img" aria-label="Map of Nigeria showing chapter locations">
         <g className="nigeria-states">
-          {nigeriaMap.locations.map((location) => (
+          {(nigeriaMap.locations as NigeriaLocation[]).map((location) => (
             <path key={location.id} d={location.path} aria-label={location.name} />
           ))}
         </g>
