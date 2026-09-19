@@ -9,7 +9,7 @@ import image08 from "../assets/gallery/WhatsApp Image 2026-09-19 at 9.06.36 AM.j
 import image09 from "../assets/gallery/WhatsApp Image 2026-09-19 at 9.06.36 AM (1).jpeg";
 import image10 from "../assets/gallery/WhatsApp Image 2026-09-19 at 9.06.35 AM.jpeg";
 import image11 from "../assets/gallery/WhatsApp Image 2026-09-19 at 9.06.35 AM (1).jpeg";
-import image12 from "../assets/gallery/WhatsApp Image 2026-09-19 at 9.06.34 AM.jpeg";
+import image12 from "../assets/gallery/yaba2.jpeg";
 import image13 from "../assets/gallery/WhatsApp Image 2026-09-19 at 9.06.34 AM (1).jpeg";
 import image14 from "../assets/gallery/WhatsApp Image 2026-09-19 at 8.10.07 AM.jpeg";
 import image15 from "../assets/gallery/WhatsApp Image 2026-09-19 at 8.10.06 AM.jpeg";

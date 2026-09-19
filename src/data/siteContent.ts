@@ -1,10 +1,10 @@
 import resourcesImage from "../assets/resources.png";
 import prophet from "../assets/prophet.png";
 import audioBook from "../assets/audio_book.png";
-// import heroPraise from "../assets/hero-praise.jpg";
-import galleryWorship from "../assets/gallery-worship.jpg";
+import liveService from "../assets/live_service.png";
+// import galleryWorship from "../assets/gallery-worship.jpg";
 import galleryBible from "../assets/gallery-bible.jpg";
-import ugenius from "../assets/ugenius.jpg";
+import seraph from "../assets/seraph.png";
 export type ResourceLink = {
   label: string;
   description: string;
@@ -29,8 +29,8 @@ export const resources: ResourceLink[] = [
   { label: "Prophet's Books", description: "Explore approved books and ministry publications.", href: officialLinks.books, image: resourcesImage },
   { label: "Teaching Resources", description: "Access teaching and faith-building resources.", href: officialLinks.teaching, image: prophet },
   { label: "Audio Books", description: "Listen to approved audio book resources.", href: officialLinks.audioBooks, image: audioBook },
-  { label: "Music", description: "Worship with official Gospel Pillars music resources.", href: officialLinks.music, image: galleryWorship },
-  { label: "LIVE Services", description: "Watch Gospel Pillars International services online.", href: officialLinks.liveServices, image: ugenius },
+  { label: "Music", description: "Worship with official Gospel Pillars music resources.", href: officialLinks.music, image: seraph },
+  { label: "LIVE Services", description: "Watch Gospel Pillars International services online.", href: officialLinks.liveServices, image: liveService },
 ];
 
 export const socialLinks: ResourceLink[] = [
