@@ -8,7 +8,6 @@ const links = [
   { label: "About", to: "/about" as const },
   { label: "Leadership", to: "/leadership" as const },
   { label: "Locations", to: "/churches" as const },
-  { label: "Services", to: "/services" as const },
   { label: "Events", to: "/events" as const },
   { label: "Resources", to: "/resources" as const },
   { label: "Contact", to: "/contact" as const },
@@ -68,7 +67,7 @@ export function SiteFooter() {
           <div className="md:col-span-3">
             <p className="eyebrow text-gold">Explore</p>
             <div className="mt-5 grid gap-3 text-sm text-sand/80">
-              <Link to="/about">About us</Link><Link to="/leadership">Leadership</Link><Link to="/churches">Our churches</Link><Link to="/units">Church units</Link><Link to="/services">Services</Link><Link to="/events">Events</Link>
+              <Link to="/about">About us</Link><Link to="/leadership">Leadership</Link><Link to="/churches">Our churches</Link><Link to="/units">Church units</Link><Link to="/events">Events</Link>
             </div>
           </div>
           <div className="md:col-span-3">

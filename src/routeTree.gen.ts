@@ -15,7 +15,6 @@ import { Route as ContactRouteImport } from './routes/contact'
 import { Route as LeadershipRouteImport } from './routes/leadership'
 import { Route as ChurchesRouteImport } from './routes/churches'
 import { Route as UnitsRouteImport } from './routes/units'
-import { Route as ServicesRouteImport } from './routes/services'
 import { Route as EventsRouteImport } from './routes/events'
 import { Route as ResourcesRouteImport } from './routes/resources'
 import { Route as GiveRouteImport } from './routes/give'
@@ -41,7 +40,6 @@ const ContactRoute = ContactRouteImport.update({
 const LeadershipRoute = LeadershipRouteImport.update({ id: '/leadership', path: '/leadership', getParentRoute: () => rootRouteImport } as any)
 const ChurchesRoute = ChurchesRouteImport.update({ id: '/churches', path: '/churches', getParentRoute: () => rootRouteImport } as any)
 const UnitsRoute = UnitsRouteImport.update({ id: '/units', path: '/units', getParentRoute: () => rootRouteImport } as any)
-const ServicesRoute = ServicesRouteImport.update({ id: '/services', path: '/services', getParentRoute: () => rootRouteImport } as any)
 const EventsRoute = EventsRouteImport.update({ id: '/events', path: '/events', getParentRoute: () => rootRouteImport } as any)
 const ResourcesRoute = ResourcesRouteImport.update({ id: '/resources', path: '/resources', getParentRoute: () => rootRouteImport } as any)
 const GiveRoute = GiveRouteImport.update({ id: '/give', path: '/give', getParentRoute: () => rootRouteImport } as any)
@@ -162,7 +160,6 @@ const rootRouteChildren: RootRouteChildren = {
   LeadershipRoute,
   ChurchesRoute,
   UnitsRoute,
-  ServicesRoute,
   EventsRoute,
   ResourcesRoute,
   GiveRoute,

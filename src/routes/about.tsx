@@ -5,7 +5,7 @@ import heroStudy from "../assets/hero-study.jpg";
 import galleryChoir from "../assets/gallery-choir.jpg";
 import prophetOfficial from "../assets/prophet_official.png";
 // import galleryCommunity from "../assets/gallery-community.jpg";
-import apstBarney from "../assets/apst_barney2.jpeg";
+import apstBarney from "../assets/apst_barney_cropped.jpeg";
 import { officialLinks } from "../data/siteContent";
 
 export const Route = createFileRoute("/about")({

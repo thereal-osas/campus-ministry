@@ -1,6 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ContentPage } from "../components/ContentPage";
-// import { missingInfo } from "../data/siteContent";
 import declaration from "../assets/declaration.png";
 
 export const Route = createFileRoute("/give")({ component: GivePage });
