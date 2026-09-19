@@ -5,6 +5,7 @@ import heroStudy from "../assets/hero-study.jpg";
 import galleryChoir from "../assets/gallery-choir.jpg";
 // import galleryCommunity from "../assets/gallery-community.jpg";
 import apstBarney from "../assets/apst_barney.jpeg";
+import { officialLinks } from "../data/siteContent";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -77,6 +78,18 @@ function AboutPage() {
           </Reveal>
         </div>
       </section>
+      <section className="bg-sand-deep py-20 md:py-28">
+        <div className="site-container">
+          <p className="eyebrow text-gold">Vision, mission &amp; purpose</p>
+          <h2 className="mt-4 max-w-3xl font-display text-4xl text-ink md:text-5xl">A global church family rooted in the presence of God.</h2>
+          <div className="content-card-grid mt-12">
+            <article className="content-card"><p className="eyebrow text-gold">Vision</p><h3 className="mt-3 font-display text-2xl text-ink">A church family growing across nations.</h3><p className="mt-3 text-sm leading-7 text-ink/70">To see people encounter God, grow in Christ, and become a living expression of the Gospel in every community.</p></article>
+            <article className="content-card"><p className="eyebrow text-gold">Mission</p><h3 className="mt-3 font-display text-2xl text-ink">Worship, teaching, and transformation.</h3><p className="mt-3 text-sm leading-7 text-ink/70">To build healthy churches and fellowships through the Word, prayer, worship, leadership, and practical service.</p></article>
+            <article className="content-card"><p className="eyebrow text-gold">Purpose</p><h3 className="mt-3 font-display text-2xl text-ink">Christ known and communities changed.</h3><p className="mt-3 text-sm leading-7 text-ink/70">To raise people who live with faith, character, purpose, and courage as they serve the Church and the world.</p></article>
+          </div>
+          <a href={officialLinks.globalSite} target="_blank" rel="noreferrer" className="button-primary mt-10">Visit GospelPillars.org</a>
+        </div>
+      </section>
       <section className="bg-brand py-20 md:py-28">
         <div className="site-container">
           <Reveal>
@@ -88,7 +101,7 @@ function AboutPage() {
           <div className="mt-12 grid items-stretch gap-8 md:grid-cols-12 md:gap-12">
             <Reveal className="md:col-span-5">
               <img
-                src="https://gospelpillars.org.gh/wp-content/uploads/2026/08/gpc-accra-leadership-prophet-isaiah-macwealth-819x1024.webp"
+                src={heroStudy}
                 alt="Prophet Isaiah Macwealth, Senior Pastor of Gospel Pillars International"
                 loading="lazy"
                 width="819"

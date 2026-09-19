@@ -28,7 +28,7 @@ export const Route = createFileRoute("/contact")({
 });
 
 const contactDetails: Array<[LucideIcon, string, string]> = [
-  [Mail, "Email", "hello@gospelpillars.org.gh"],
+  [Mail, "Email", "[Add confirmed divisional email]"],
   [Phone, "Phone", "Add your phone number"],
   [MapPin, "Location", "Nigeria · serving campuses nationwide"],
 ];

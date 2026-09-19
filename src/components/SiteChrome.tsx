@@ -6,6 +6,11 @@ import gpclogo from "../assets/gpclogo.png";
 const links = [
   { label: "Home", to: "/" as const },
   { label: "About", to: "/about" as const },
+  { label: "Leadership", to: "/leadership" as const },
+  { label: "Locations", to: "/churches" as const },
+  { label: "Services", to: "/services" as const },
+  { label: "Events", to: "/events" as const },
+  { label: "Resources", to: "/resources" as const },
   { label: "Contact", to: "/contact" as const },
 ];
 
@@ -29,10 +34,9 @@ export function SiteHeader() {
               {link.label}
             </Link>
           ))}
-          <Link to="/" hash="chapters" className="nav-link">Locations</Link>
         </nav>
 
-        <Link to="/contact" className="button-outline hidden sm:inline-flex">Find a location</Link>
+        <Link to="/churches" className="button-outline hidden sm:inline-flex">Find a location</Link>
         <button className="icon-button md:hidden" aria-label={open ? "Close menu" : "Open menu"} onClick={() => setOpen(!open)}>
           {open ? <X size={20} /> : <Menu size={20} />}
         </button>
@@ -40,7 +44,6 @@ export function SiteHeader() {
       {open && (
         <nav className="mobile-nav md:hidden" aria-label="Mobile navigation">
           {links.map((link) => <Link key={link.to} to={link.to} onClick={() => setOpen(false)}>{link.label}</Link>)}
-          <Link to="/" hash="chapters" onClick={() => setOpen(false)}>Locations</Link>
         </nav>
       )}
     </header>
@@ -65,20 +68,20 @@ export function SiteFooter() {
           <div className="md:col-span-3">
             <p className="eyebrow text-gold">Explore</p>
             <div className="mt-5 grid gap-3 text-sm text-sand/80">
-              <Link to="/about">About us</Link><Link to="/" hash="chapters">Locations</Link><Link to="/contact">Contact</Link>
+              <Link to="/about">About us</Link><Link to="/leadership">Leadership</Link><Link to="/churches">Our churches</Link><Link to="/units">Church units</Link><Link to="/services">Services</Link><Link to="/events">Events</Link>
             </div>
           </div>
           <div className="md:col-span-3">
             <p className="eyebrow text-gold">Get in touch</p>
             <div className="mt-5 grid gap-3 text-sm text-sand/80">
-              <a href="mailto:hello@gospelpillars.org.gh">hello@gospelpillars.org.gh</a>
+              <Link to="/contact">Add confirmed divisional email</Link>
               <span>Nigeria</span>
-              <Link to="/contact">Send a message</Link>
+              <Link to="/resources">Resources</Link><Link to="/gallery">Gallery</Link><Link to="/give">Give / Partner</Link><Link to="/connect">Connect with us</Link><Link to="/contact">Contact us</Link><Link to="/privacy">Privacy policy</Link>
             </div>
           </div>
         </div>
         <div className="mt-14 flex flex-wrap justify-between gap-3 border-t border-sand/15 pt-7 text-xs text-sand/50">
-          <p>© 2026 Gospel Pillars Campus Ministry.</p><p>Built for every community.</p>
+          <p>© 2026 Gospel Pillars Nigeria 2 Division.</p><p>Built for every community.</p>
         </div>
       </div>
     </footer>
