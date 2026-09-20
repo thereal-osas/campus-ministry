@@ -189,8 +189,8 @@
 @keyframes heroCrossfade { 0%{opacity:0;transform:scale(1.04)} 8%,28%{opacity:1} 36%,100%{opacity:0;transform:scale(1.1)} }
 .reveal { opacity:0; transform:translateY(28px); transition:opacity .8s cubic-bezier(.22,1,.36,1), transform .8s cubic-bezier(.22,1,.36,1); }
 .reveal.is-visible { opacity:1; transform:none; }
-.map-stage { position:relative; height:25rem; max-width:31rem; margin:auto; }
-.nigeria-map { display:block; width:100%; height:100%; overflow:visible; }
+.map-stage { position:relative; width:100%; max-width:31rem; aspect-ratio:744/600; height:auto; margin:auto; }
+.nigeria-map { display:block; width:100%; height:auto; max-height:100%; overflow:visible; }
 .nigeria-states path { fill:color-mix(in oklab,var(--sand) 12%,transparent); stroke:color-mix(in oklab,var(--sand) 55%,transparent); stroke-width:1.5; vector-effect:non-scaling-stroke; transition:fill .2s ease; }
 .nigeria-states path:hover { fill:color-mix(in oklab,var(--gold) 20%,transparent); }
 .nigeria-marker { cursor:pointer; outline:none; }
@@ -202,12 +202,12 @@
 @keyframes markerPulse { 50% { box-shadow:0 0 0 11px color-mix(in oklab,var(--gold) 0%,transparent); } }
 .chapter-list { max-height:42rem; overflow-y:auto; scrollbar-color:color-mix(in oklab,var(--gold) 60%,transparent) transparent; }
 .chapter-item { scroll-margin-block:1rem; }
-.chapter-toggle { display:flex; width:100%; align-items:center; justify-content:space-between; gap:1rem; padding:1rem 0; text-align:left; }
+.chapter-toggle { display:flex; width:100%; align-items:center; justify-content:space-between; gap:1rem; padding:1rem 0; text-align:left; min-width:0; }
 .chapter-toggle:hover .text-sand, .chapter-toggle:focus-visible .text-sand { color:var(--gold); }
-.chapter-details { margin:0 0 .75rem 2rem; display:grid; gap:.65rem; border-left:1px solid color-mix(in oklab,var(--gold) 35%,transparent); padding:.15rem 0 .15rem 1rem; color:color-mix(in oklab,var(--sand) 72%,transparent); font-size:.8rem; line-height:1.5; }
-.chapter-details p { display:grid; gap:.15rem; }
+.chapter-details { margin:0 0 .75rem 1.5rem; display:grid; gap:.65rem; border-left:1px solid color-mix(in oklab,var(--gold) 35%,transparent); padding:.15rem 0 .15rem 1rem; color:color-mix(in oklab,var(--sand) 72%,transparent); font-size:.8rem; line-height:1.5; word-break:break-word; overflow-wrap:anywhere; min-width:0; }
+.chapter-details p { display:grid; gap:.15rem; word-break:break-word; overflow-wrap:anywhere; min-width:0; }
 .chapter-details strong { color:var(--gold); font-family:var(--font-mono); font-size:.62rem; font-weight:400; letter-spacing:.08em; text-transform:uppercase; }
-.chapter-details a { display:inline-flex; align-items:center; gap:.35rem; color:var(--sand); transition:color .2s ease; }
+.chapter-details a { display:inline-flex; flex-wrap:wrap; align-items:center; gap:.35rem; color:var(--sand); transition:color .2s ease; word-break:break-word; overflow-wrap:anywhere; }
 .chapter-details a:hover { color:var(--gold); }
 .principles-list { display:grid; gap:1.25rem; border-top:1px solid color-mix(in oklab,var(--brand) 15%,transparent); }
 .principle-item { display:grid; grid-template-columns:2.5rem 1fr; gap:.75rem; border-bottom:1px solid color-mix(in oklab,var(--brand) 15%,transparent); padding:1.15rem 0; }
@@ -268,7 +268,7 @@
 .bento-item-3 { grid-row:span 3; }
 .bento-item-4 { grid-column:span 2; grid-row:span 2; }
 
-@media (max-width: 640px) { .site-container { width:min(100% - 2rem,82.5rem); } .map-stage{height:20rem;} .marker-label{font-size:9px;} }
+@media (max-width: 640px) { .site-container { width:min(100% - 1.5rem,82.5rem); } .map-stage { width:100%; height:auto; max-height:18rem; } .nigeria-map { overflow:hidden; } .map-label { font-size:1.25rem; right:4%; bottom:4%; } .marker-label { font-size:9px; } .chapter-details { margin:0 0 .75rem .75rem; padding-left:.75rem; font-size:.78rem; } }
 @media (max-width: 760px) { .word-year-layout { grid-template-columns:1fr; } .word-year-declaration { grid-column:auto; margin-top:0; } .word-year-image { height:auto; } }
 @media (max-width: 900px) { .content-card-grid, .profile-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
 @media (max-width: 900px) { .quick-links { grid-template-columns:repeat(2,minmax(0,1fr)); } }

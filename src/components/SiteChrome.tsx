@@ -73,14 +73,12 @@ export function SiteFooter() {
           <div className="md:col-span-3">
             <p className="eyebrow text-gold">Get in touch</p>
             <div className="mt-5 grid gap-3 text-sm text-sand/80">
-              <Link to="/contact">Add confirmed divisional email</Link>
-              <span>Nigeria</span>
               <Link to="/resources">Resources</Link><Link to="/gallery">Gallery</Link><Link to="/give">Give / Partner</Link><Link to="/connect">Connect with us</Link><Link to="/contact">Contact us</Link><Link to="/privacy">Privacy policy</Link>
             </div>
           </div>
         </div>
         <div className="mt-14 flex flex-wrap justify-between gap-3 border-t border-sand/15 pt-7 text-xs text-sand/50">
-          <p>© 2026 Gospel Pillars Nigeria 2 Division.</p><p>Built for every community.</p>
+          <p>© 2026 Gospel Pillars Nigeria 2 Division.</p><p>Built for every campus.</p>
         </div>
       </div>
     </footer>

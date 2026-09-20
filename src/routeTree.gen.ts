@@ -11,16 +11,17 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
-import { Route as ContactRouteImport } from './routes/contact'
-import { Route as LeadershipRouteImport } from './routes/leadership'
 import { Route as ChurchesRouteImport } from './routes/churches'
-import { Route as UnitsRouteImport } from './routes/units'
-import { Route as EventsRouteImport } from './routes/events'
-import { Route as ResourcesRouteImport } from './routes/resources'
-import { Route as GiveRouteImport } from './routes/give'
+import { Route as ChurchesChapterIdRouteImport } from './routes/churches/$chapterId'
 import { Route as ConnectRouteImport } from './routes/connect'
-import { Route as PrivacyRouteImport } from './routes/privacy'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as EventsRouteImport } from './routes/events'
 import { Route as GalleryRouteImport } from './routes/gallery'
+import { Route as GiveRouteImport } from './routes/give'
+import { Route as LeadershipRouteImport } from './routes/leadership'
+import { Route as PrivacyRouteImport } from './routes/privacy'
+import { Route as ResourcesRouteImport } from './routes/resources'
+import { Route as UnitsRouteImport } from './routes/units'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -32,89 +33,170 @@ const AboutRoute = AboutRouteImport.update({
   path: '/about',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ChurchesRoute = ChurchesRouteImport.update({
+  id: '/churches',
+  path: '/churches',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ChurchesChapterIdRoute = ChurchesChapterIdRouteImport.update({
+  id: '/churches/$chapterId',
+  path: '/churches/$chapterId',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ConnectRoute = ConnectRouteImport.update({
+  id: '/connect',
+  path: '/connect',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
-const LeadershipRoute = LeadershipRouteImport.update({ id: '/leadership', path: '/leadership', getParentRoute: () => rootRouteImport } as any)
-const ChurchesRoute = ChurchesRouteImport.update({ id: '/churches', path: '/churches', getParentRoute: () => rootRouteImport } as any)
-const UnitsRoute = UnitsRouteImport.update({ id: '/units', path: '/units', getParentRoute: () => rootRouteImport } as any)
-const EventsRoute = EventsRouteImport.update({ id: '/events', path: '/events', getParentRoute: () => rootRouteImport } as any)
-const ResourcesRoute = ResourcesRouteImport.update({ id: '/resources', path: '/resources', getParentRoute: () => rootRouteImport } as any)
-const GiveRoute = GiveRouteImport.update({ id: '/give', path: '/give', getParentRoute: () => rootRouteImport } as any)
-const ConnectRoute = ConnectRouteImport.update({ id: '/connect', path: '/connect', getParentRoute: () => rootRouteImport } as any)
-const PrivacyRoute = PrivacyRouteImport.update({ id: '/privacy', path: '/privacy', getParentRoute: () => rootRouteImport } as any)
-const GalleryRoute = GalleryRouteImport.update({ id: '/gallery', path: '/gallery', getParentRoute: () => rootRouteImport } as any)
+const EventsRoute = EventsRouteImport.update({
+  id: '/events',
+  path: '/events',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GalleryRoute = GalleryRouteImport.update({
+  id: '/gallery',
+  path: '/gallery',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GiveRoute = GiveRouteImport.update({
+  id: '/give',
+  path: '/give',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LeadershipRoute = LeadershipRouteImport.update({
+  id: '/leadership',
+  path: '/leadership',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ResourcesRoute = ResourcesRouteImport.update({
+  id: '/resources',
+  path: '/resources',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const UnitsRoute = UnitsRouteImport.update({
+  id: '/units',
+  path: '/units',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/contact': typeof ContactRoute
-  '/leadership': typeof LeadershipRoute
   '/churches': typeof ChurchesRoute
-  '/units': typeof UnitsRoute
-  '/services': typeof ServicesRoute
-  '/events': typeof EventsRoute
-  '/resources': typeof ResourcesRoute
-  '/give': typeof GiveRoute
+  '/churches/$chapterId': typeof ChurchesChapterIdRoute
   '/connect': typeof ConnectRoute
-  '/privacy': typeof PrivacyRoute
+  '/contact': typeof ContactRoute
+  '/events': typeof EventsRoute
   '/gallery': typeof GalleryRoute
+  '/give': typeof GiveRoute
+  '/leadership': typeof LeadershipRoute
+  '/privacy': typeof PrivacyRoute
+  '/resources': typeof ResourcesRoute
+  '/units': typeof UnitsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/contact': typeof ContactRoute
-  '/leadership': typeof LeadershipRoute
   '/churches': typeof ChurchesRoute
-  '/units': typeof UnitsRoute
-  '/services': typeof ServicesRoute
-  '/events': typeof EventsRoute
-  '/resources': typeof ResourcesRoute
-  '/give': typeof GiveRoute
+  '/churches/$chapterId': typeof ChurchesChapterIdRoute
   '/connect': typeof ConnectRoute
-  '/privacy': typeof PrivacyRoute
+  '/contact': typeof ContactRoute
+  '/events': typeof EventsRoute
   '/gallery': typeof GalleryRoute
+  '/give': typeof GiveRoute
+  '/leadership': typeof LeadershipRoute
+  '/privacy': typeof PrivacyRoute
+  '/resources': typeof ResourcesRoute
+  '/units': typeof UnitsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/contact': typeof ContactRoute
-  '/leadership': typeof LeadershipRoute
   '/churches': typeof ChurchesRoute
-  '/units': typeof UnitsRoute
-  '/services': typeof ServicesRoute
-  '/events': typeof EventsRoute
-  '/resources': typeof ResourcesRoute
-  '/give': typeof GiveRoute
+  '/churches/$chapterId': typeof ChurchesChapterIdRoute
   '/connect': typeof ConnectRoute
-  '/privacy': typeof PrivacyRoute
+  '/contact': typeof ContactRoute
+  '/events': typeof EventsRoute
   '/gallery': typeof GalleryRoute
+  '/give': typeof GiveRoute
+  '/leadership': typeof LeadershipRoute
+  '/privacy': typeof PrivacyRoute
+  '/resources': typeof ResourcesRoute
+  '/units': typeof UnitsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/contact' | '/leadership' | '/churches' | '/units' | '/services' | '/events' | '/resources' | '/give' | '/connect' | '/privacy' | '/gallery'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/churches'
+    | '/churches/$chapterId'
+    | '/connect'
+    | '/contact'
+    | '/events'
+    | '/gallery'
+    | '/give'
+    | '/leadership'
+    | '/privacy'
+    | '/resources'
+    | '/units'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/contact' | '/leadership' | '/churches' | '/units' | '/services' | '/events' | '/resources' | '/give' | '/connect' | '/privacy' | '/gallery'
-  id: '__root__' | '/' | '/about' | '/contact' | '/leadership' | '/churches' | '/units' | '/services' | '/events' | '/resources' | '/give' | '/connect' | '/privacy' | '/gallery'
+  to:
+    | '/'
+    | '/about'
+    | '/churches'
+    | '/churches/$chapterId'
+    | '/connect'
+    | '/contact'
+    | '/events'
+    | '/gallery'
+    | '/give'
+    | '/leadership'
+    | '/privacy'
+    | '/resources'
+    | '/units'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/churches'
+    | '/churches/$chapterId'
+    | '/connect'
+    | '/contact'
+    | '/events'
+    | '/gallery'
+    | '/give'
+    | '/leadership'
+    | '/privacy'
+    | '/resources'
+    | '/units'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
-  ContactRoute: typeof ContactRoute
-  LeadershipRoute: typeof LeadershipRoute
   ChurchesRoute: typeof ChurchesRoute
-  UnitsRoute: typeof UnitsRoute
-  ServicesRoute: typeof ServicesRoute
-  EventsRoute: typeof EventsRoute
-  ResourcesRoute: typeof ResourcesRoute
-  GiveRoute: typeof GiveRoute
+  ChurchesChapterIdRoute: typeof ChurchesChapterIdRoute
   ConnectRoute: typeof ConnectRoute
-  PrivacyRoute: typeof PrivacyRoute
+  ContactRoute: typeof ContactRoute
+  EventsRoute: typeof EventsRoute
   GalleryRoute: typeof GalleryRoute
+  GiveRoute: typeof GiveRoute
+  LeadershipRoute: typeof LeadershipRoute
+  PrivacyRoute: typeof PrivacyRoute
+  ResourcesRoute: typeof ResourcesRoute
+  UnitsRoute: typeof UnitsRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -133,6 +215,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/churches': {
+      id: '/churches'
+      path: '/churches'
+      fullPath: '/churches'
+      preLoaderRoute: typeof ChurchesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/churches/$chapterId': {
+      id: '/churches/$chapterId'
+      path: '/churches/$chapterId'
+      fullPath: '/churches/$chapterId'
+      preLoaderRoute: typeof ChurchesChapterIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/connect': {
+      id: '/connect'
+      path: '/connect'
+      fullPath: '/connect'
+      preLoaderRoute: typeof ConnectRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/contact': {
       id: '/contact'
       path: '/contact'
@@ -140,43 +243,73 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/leadership': { id: '/leadership'; path: '/leadership'; fullPath: '/leadership'; preLoaderRoute: typeof LeadershipRouteImport; parentRoute: typeof rootRouteImport }
-    '/churches': { id: '/churches'; path: '/churches'; fullPath: '/churches'; preLoaderRoute: typeof ChurchesRouteImport; parentRoute: typeof rootRouteImport }
-    '/units': { id: '/units'; path: '/units'; fullPath: '/units'; preLoaderRoute: typeof UnitsRouteImport; parentRoute: typeof rootRouteImport }
-    '/services': { id: '/services'; path: '/services'; fullPath: '/services'; preLoaderRoute: typeof ServicesRouteImport; parentRoute: typeof rootRouteImport }
-    '/events': { id: '/events'; path: '/events'; fullPath: '/events'; preLoaderRoute: typeof EventsRouteImport; parentRoute: typeof rootRouteImport }
-    '/resources': { id: '/resources'; path: '/resources'; fullPath: '/resources'; preLoaderRoute: typeof ResourcesRouteImport; parentRoute: typeof rootRouteImport }
-    '/give': { id: '/give'; path: '/give'; fullPath: '/give'; preLoaderRoute: typeof GiveRouteImport; parentRoute: typeof rootRouteImport }
-    '/connect': { id: '/connect'; path: '/connect'; fullPath: '/connect'; preLoaderRoute: typeof ConnectRouteImport; parentRoute: typeof rootRouteImport }
-    '/privacy': { id: '/privacy'; path: '/privacy'; fullPath: '/privacy'; preLoaderRoute: typeof PrivacyRouteImport; parentRoute: typeof rootRouteImport }
-    '/gallery': { id: '/gallery'; path: '/gallery'; fullPath: '/gallery'; preLoaderRoute: typeof GalleryRouteImport; parentRoute: typeof rootRouteImport }
+    '/events': {
+      id: '/events'
+      path: '/events'
+      fullPath: '/events'
+      preLoaderRoute: typeof EventsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gallery': {
+      id: '/gallery'
+      path: '/gallery'
+      fullPath: '/gallery'
+      preLoaderRoute: typeof GalleryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/give': {
+      id: '/give'
+      path: '/give'
+      fullPath: '/give'
+      preLoaderRoute: typeof GiveRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/leadership': {
+      id: '/leadership'
+      path: '/leadership'
+      fullPath: '/leadership'
+      preLoaderRoute: typeof LeadershipRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/resources': {
+      id: '/resources'
+      path: '/resources'
+      fullPath: '/resources'
+      preLoaderRoute: typeof ResourcesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/units': {
+      id: '/units'
+      path: '/units'
+      fullPath: '/units'
+      preLoaderRoute: typeof UnitsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  ChurchesRoute: ChurchesRoute,
+  ChurchesChapterIdRoute: ChurchesChapterIdRoute,
+  ConnectRoute: ConnectRoute,
   ContactRoute: ContactRoute,
-  LeadershipRoute,
-  ChurchesRoute,
-  UnitsRoute,
-  EventsRoute,
-  ResourcesRoute,
-  GiveRoute,
-  ConnectRoute,
-  PrivacyRoute,
-  GalleryRoute,
+  EventsRoute: EventsRoute,
+  GalleryRoute: GalleryRoute,
+  GiveRoute: GiveRoute,
+  LeadershipRoute: LeadershipRoute,
+  PrivacyRoute: PrivacyRoute,
+  ResourcesRoute: ResourcesRoute,
+  UnitsRoute: UnitsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}

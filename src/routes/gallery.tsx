@@ -1,12 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ContentPage } from "../components/ContentPage";
 import { allGalleryImages } from "../data/gallery";
-import heroWorship from "../assets/hero-worship.jpg";
+import ibadan from "../assets/ibadan.jpeg"
 
 export const Route = createFileRoute("/gallery")({ component: GalleryPage });
 
 function GalleryPage() {
-  return <ContentPage heroImage={heroWorship} eyebrow="Gallery" title="Moments from the movement." intro="A visual record of worship, fellowship, service, and the life of Gospel Pillars communities.">
+  return <ContentPage heroImage={ibadan} eyebrow="Gallery" title="Moments from the movement." intro="A visual record of worship, fellowship, service, and the life of Gospel Pillars communities.">
     <div className="bento-gallery">{allGalleryImages.map((image, index) => <figure key={image.filePath} className={`bento-item bento-item-${index % 8}`}><img src={image.src} alt={image.alt} loading={index < 4 ? "eager" : "lazy"} /><figcaption>Gospel Pillars · {String(index + 1).padStart(2, "0")}</figcaption></figure>)}</div>
   </ContentPage>;
 }

@@ -35,7 +35,7 @@ export const resources: ResourceLink[] = [
 
 export const socialLinks: ResourceLink[] = [
   { label: "Facebook", description: "Follow official Gospel Pillars updates.", href: "https://facebook.com/" },
-  { label: "Instagram", description: "Follow the official Gospel Pillars community.", href: "https://www.instagram.com/" },
+  { label: "Instagram", description: "Follow the official Gospel Pillars community.", href: "https://www.instagram.com/gpc_ugbowo/" },
   { label: "YouTube", description: "Watch services, messages, and ministry media.", href: officialLinks.liveServices },
 ];
 
