@@ -104,7 +104,7 @@ export type ChapterPhoto = {
 
 // Map known chapter IDs to specific photo collections
 const specificChapterPhotos: Record<string, ChapterPhoto[]> = {
-  "gospel-pillars-church-ugbowo": [
+  "gospel-pillars-campus-community-church-ugbowo-benin-city": [
     { src: ugbowo1, alt: "GPC Ugbowo", caption: "Sunday Service at Precious Palm Royal Hotel" },
     { src: ugbowo2, alt: "GPC Ugbowo", caption: "Atmosphere of worship and praise" },
     { src: ugbowo3, alt: "GPC Ugbowo", caption: "Outreach to students and community" },
@@ -149,7 +149,7 @@ const specificChapterPhotos: Record<string, ChapterPhoto[]> = {
   "gospel-pillars-campus-fellowship-auchi": [
     { src: picPlaceholder, alt: "GPCF AAU", caption: "Sunday Service" },
   ],
-  "gospel-pillars-church-ibadan": [
+  "gospel-pillars-campus-community-church-ibadan": [
     { src: ibadan1, alt: "GPC Ibadan", caption: "Sunday Service" },
     { src: ibadan2, alt: "GPC Ibadan", caption: "Atmosphere of worship and praise" },
     { src: ibadan3, alt: "GPC Ibadan", caption: "Outreach to students and community" },
@@ -168,7 +168,25 @@ const specificChapterPhotos: Record<string, ChapterPhoto[]> = {
     { src: ibadan16, alt: "GPC Ibadan", caption: "Outreach to students and community" },
     { src: ibadan17, alt: "GPC Ibadan", caption: "Outreach to students and community" },
   ],
-  "gospel-pillars-church-yaba": [
+  "gospel-pillars-campus-community-church-ilorin": [
+    { src: picPlaceholder, alt: "GPCC Ilorin", caption: "Sunday Service" }
+  ],
+  "gospel-pillars-campus-fellowship-university-of-ibadan": [
+    { src: picPlaceholder, alt: "GPF UI", caption: "Sunday Service" }
+  ],
+  "gospel-pillars-campus-fellowship-obafemi-awolowo-university": [
+    { src: picPlaceholder, alt: "GPF OAU", caption: "Sunday Service" }
+  ],
+  "gospel-pillars-campus-community-church-abeokuta": [
+    { src: picPlaceholder, alt: "GPCC Abeokuta", caption: "Sunday Service" }
+  ],
+  "gospel-pillars-campus-community-church-akure": [
+    { src: picPlaceholder, alt: "GPCC Akure", caption: "Sunday Service" }
+  ],
+  "gospel-pillars-campus-fellowship-the-polytechnic-ibadan": [
+    { src: picPlaceholder, alt: "GPCF The Polytechnic, Ibadan", caption: "Sunday Service" }
+  ],
+  "gospel-pillars-campus-community-church-yaba": [
     { src: yaba1, alt: "GPC Yaba", caption: "Service at Beverly Events Centre, Bariga" },
     { src: yaba2, alt: "GPC Yaba", caption: "Deep worship and ministry of the Word" },
     { src: yaba3, alt: "GPC Yaba", caption: "Sanctuary at Beverly Events Centre, Bariga" },
@@ -181,6 +199,15 @@ const specificChapterPhotos: Record<string, ChapterPhoto[]> = {
     { src: yaba10, alt: "GPC Yaba", caption: "Sanctuary at Beverly Events Centre, Bariga" },
     { src: yaba11, alt: "GPC Yaba", caption: "Sanctuary at Beverly Events Centre, Bariga" },
     { src: yaba12, alt: "GPC Yaba", caption: "Sanctuary at Beverly Events Centre, Bariga" },
+  ],
+  "gospel-pillars-campus-fellowship-university-of-lagos": [
+    { src: picPlaceholder, alt: "GPCF UNILAG", caption: "Sunday Service" }
+  ],
+  "gospel-pillars-campus-fellowship-lagos-state-university": [
+    { src: picPlaceholder, alt: "GPCF LASU", caption: "Sunday Service" }
+  ],
+  "gospel-pillars-campus-fellowship-yaba-college-of-technology": [
+    { src: picPlaceholder, alt: "GPCF Yaba College of Technology", caption: "Sunday Service" }
   ],
   "gospel-pillars-campus-community-church-abraka": [
     { src: abraka1, alt: "GPCC Abraka", caption: "Sunday Service" },
@@ -199,21 +226,48 @@ const specificChapterPhotos: Record<string, ChapterPhoto[]> = {
     { src: abraka14, alt: "GPCC Abraka", caption: "Sunday Service" },
     { src: abraka15, alt: "GPCC Abraka", caption: "Sunday Service" },
   ],
+  "gospel-pillars-campus-fellowship-delta-state-university": [
+    { src: picPlaceholder, alt: "GPCF DELSU", caption: "Sunday Service" }
+  ],
   "gospel-pillars-campus-fellowship-university-of-port-harcourt": [
     { src: uniport1, alt: "GPCC Abraka", caption: "Sunday Service" },
     { src: uniport2, alt: "GPCC Abraka", caption: "Sunday Service" },
     { src: uniport3, alt: "GPCC Abraka", caption: "Sunday Service" },
     { src: uniport4, alt: "GPCC Abraka", caption: "Sunday Service" },
   ],
-  "gospel-pillars-campus-fellowship-yaba-college-of-technology": [
-    { src: picPlaceholder, alt: "GPCF YCT", caption: "Sunday Service" },
+  "gospel-pillars-campus-fellowship-federal-university-of-technology-owerri": [
+    { src: picPlaceholder, alt: "GPCF FUTO", caption: "Sunday Service" }
   ],
-  "gospel-pillars-campus-fellowship-federal-university-of-technology-minna": [
+  "gospel-pillars-campus-fellowship-university-of-calabar": [
+    { src: picPlaceholder, alt: "GPCF UNICAL", caption: "Sunday Service" }
+  ],
+  "gospel-pillars-campus-fellowship-university-of-nigeria-nsukka": [
+    { src: picPlaceholder, alt: "GPCF UNN", caption: "Sunday Service" }
+  ],
+  "gospel-pillars-campus-fellowship-rivers-state-university": [
+    { src: picPlaceholder, alt: "GPCF RSU", caption: "Sunday Service" }
+  ],
+  "gospel-pillars-campus-fellowship-ignatius-ajuru-university-of-education": [
+    { src: picPlaceholder, alt: "GPCF IAUE", caption: "Sunday Service" }
+  ],
+  "gospel-pillars-campus-fellowship-novenna": [
+    { src: picPlaceholder, alt: "GPCF NOVENNA", caption: "Sunday Service" }
+  ],
+  "gospel-pillars-campus-fellowship-university-of-uyo": [
+    { src: picPlaceholder, alt: "GPCF UNIUYO", caption: "Sunday Service" }
+  ],
+  "gospel-pillars-campus-community-church-minna": [
     { src: futmina1, alt: "GPCF FUTMINNA", caption: "Sunday Service at PTDF Hall Engineering" },
     { src: futmina4, alt: "GPCF FUTMINNA", caption: "Freshers orientation and welcoming students" },
     { src: futmina2, alt: "GPCF FUTMINNA", caption: "Worship and ministry of the Word" },
     { src: futmina3, alt: "GPCF FUTMINNA", caption: "Students gathering in unity" },
     { src: futmina5, alt: "GPCF FUTMINNA", caption: "Students gathering in unity" },
+  ],
+  "gospel-pillars-campus-fellowship-university-of-abuja": [
+    { src: picPlaceholder, alt: "GPCF UNIABUJA", caption: "Sunday Service" }
+  ],
+  "gospel-pillars-campus-fellowship-university-of-jos": [
+    { src: picPlaceholder, alt: "GPCF UNIJOS", caption: "Sunday Service" }
   ],
 
 };
