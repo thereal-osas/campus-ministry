@@ -167,11 +167,7 @@ function ChapterDetailPage() {
                     <ZoomIn size={14} /> View full photo
                   </span>
                 </div>
-                {photo.caption && (
-                  <figcaption className="p-3 text-xs text-ink/75 truncate border-t border-brand/10 bg-white/80">
-                    {photo.caption}
-                  </figcaption>
-                )}
+
               </figure>
             ))}
           </div>

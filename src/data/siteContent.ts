@@ -1,10 +1,10 @@
 import resourcesImage from "../assets/resources.png";
 import prophet from "../assets/prophet.png";
 import audioBook from "../assets/audio_book.png";
-import liveService from "../assets/live_service.png";
+import liveService from "../assets/live_service.jpg";
 // import galleryWorship from "../assets/gallery-worship.jpg";
 import galleryBible from "../assets/gallery-bible.jpg";
-import seraph from "../assets/seraph.png";
+import seraph from "../assets/seraph.jpg";
 export type ResourceLink = {
   label: string;
   description: string;

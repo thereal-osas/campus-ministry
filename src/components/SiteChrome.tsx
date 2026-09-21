@@ -8,7 +8,7 @@ const links = [
   { label: "About", to: "/about" as const },
   { label: "Leadership", to: "/leadership" as const },
   { label: "Locations", to: "/churches" as const },
-  { label: "Events", to: "/events" as const },
+  // { label: "Events", to: "/events" as const },
   { label: "Resources", to: "/resources" as const },
   { label: "Contact", to: "/contact" as const },
 ];

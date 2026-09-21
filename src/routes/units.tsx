@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, Flame, HeartHandshake, Mic2, Shield, Smile } from "lucide-react";
+import { ArrowRight, Clapperboard, Flame, HeartHandshake, Mic2, Shield, Smile } from "lucide-react";
 import { ContentPage } from "../components/ContentPage";
 import heroPraise from "../assets/hero-praise.jpg";
 
@@ -69,6 +69,19 @@ const churchUnits = [
       "Identifying and discreetly supporting brethren with welfare needs",
       "Student campus support, exam-season encouragement, and care packages",
       "Hospital visitations, home check-ins, and benevolence outreaches",
+    ],
+  },
+  {
+    id: "media",
+    name: "Media Department",
+    eyebrow: "Audio, Visual & Digital",
+    icon: Clapperboard,
+    description:
+      "The creative force behind Gospel Pillars' broadcast and digital presence. The media unit captures, produces, and distributes the Word through sound, photography, video, live streaming, and social media — ensuring no soul misses a message.",
+    responsibilities: [
+      "Live sound engineering, audio mixing, and PA system management",
+      "Service photography, videography, and post-production editing",
+      "Live stream management and digital content publishing across platforms",
     ],
   },
 ];

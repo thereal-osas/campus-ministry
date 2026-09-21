@@ -1,17 +1,16 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
-import { ArrowRight, ChevronDown, Mail, MapPin } from "lucide-react";
+import { ArrowRight, ChevronDown, Mail, MapPin, Phone } from "lucide-react";
 import { NigeriaMap } from "../components/NigeriaMap";
 import { Reveal } from "../components/Reveal";
 import { chapters } from "../data/chapters";
 import { galleryImages } from "../data/gallery";
 import prophet from "../assets/prophet.png";
-import freshers from "../assets/freshers.jpeg";
+import uniben16 from "../assets/gallery/uniben16.jpeg";
 import yaba2 from "../assets/gallery/yaba2.jpeg";
 import yaba3 from "../assets/yaba3.jpeg";
-import yaba4 from "../assets/yaba4.jpeg";
-import ibadan from "../assets/ibadan.jpeg"
-import entrance from "../assets/entrance.jpeg";
+import uniben18 from "../assets/gallery/uniben18.jpeg";
+import yaba1 from "../assets/gallery/yaba1.jpeg";
 import ugenius from "../assets/ugenius.jpg";
 import declaration from "../assets/declaration.png";
 import gloryOverflowDominion from "../assets/glory-overflow-dominion.png";
@@ -34,7 +33,7 @@ function HomePage() {
   return <>
     <section className="relative h-[calc(100svh-5rem)] min-h-[590px] max-h-[820px] overflow-hidden">
       <div className="absolute inset-0">
-        {[prophet, yaba2, yaba3].map((src, index) => <img key={src} src={src} alt="" className="hero-slide absolute inset-0 h-full w-full object-cover" width={1920} height={1088} fetchPriority={index === 0 ? "high" : "auto"} />)}
+        {[prophet, yaba2, yaba1, yaba3, uniben16].map((src, index) => <img key={src} src={src} alt="" className={`hero-slide hero-slide-${index + 1} absolute inset-0 h-full w-full object-cover`} width={1920} height={1088} fetchPriority={index === 0 ? "high" : "auto"} />)}
       </div>
       <div className="absolute inset-0 bg-gradient-to-t from-brand via-brand/45 to-brand/5" />
       <div className="site-container relative z-10 flex h-full flex-col justify-end pb-12 md:pb-16">
@@ -69,7 +68,7 @@ function HomePage() {
     <section id="chapters" className="relative overflow-hidden bg-brand py-20 md:py-28">
       <div className="site-container">
         <Reveal><p className="eyebrow text-gold">Our footprint</p><div className="mt-4 flex flex-wrap items-end justify-between gap-5"><h2 className="max-w-2xl font-display text-4xl leading-tight text-sand md:text-5xl">Find Gospel Pillars near you.</h2><span className="font-mono text-xs uppercase text-sand/50">{chapters.length} locations and growing</span></div></Reveal>
-        <div className="mt-12 grid gap-8 lg:grid-cols-2">
+        <div className="chapters-layout mt-12">
           <Reveal className="rounded-lg border border-sand/20 bg-sand/10 p-4 sm:p-6 backdrop-blur-xl">
             <div className="flex justify-between border-b border-sand/15 pb-4">
               <span className="text-sand">Chapter directory</span>
@@ -89,7 +88,7 @@ function HomePage() {
                       <span className="flex min-w-0 items-center gap-3">
                         <MapPin size={17} className="shrink-0 text-gold" />
                         <span className="min-w-0 text-left">
-                          <span className="block truncate text-sand">{chapter.name}</span>
+                          <span className="block text-sand" style={{ wordBreak: 'break-word', overflowWrap: 'anywhere' }}>{chapter.name}</span>
                           <span className="mt-1 block font-mono text-[10px] uppercase text-sand/50">
                             {chapter.city} · {chapter.state}
                           </span>
@@ -113,7 +112,7 @@ function HomePage() {
                         <p>
                           <strong>Contact</strong>
                           <a href={`mailto:${chapter.contact}`}>
-                            <Mail size={13} />
+                            <Phone size={13} />
                             {chapter.contact}
                           </a>
                         </p>
@@ -136,7 +135,7 @@ function HomePage() {
               Ask about another campus <ArrowRight size={15} />
             </Link>
           </Reveal>
-          <Reveal className="rounded-lg border border-sand/20 bg-sand/10 p-4 sm:p-6 backdrop-blur-xl">
+          <Reveal className="rounded-lg border border-sand/20 bg-sand/10 p-4 sm:p-6 backdrop-blur-xl chapters-map-panel">
             <div className="flex items-center justify-between">
               <p className="text-sand">Where we are planted</p>
               <span className="font-mono text-[10px] uppercase text-sand/50">Nigeria</span>

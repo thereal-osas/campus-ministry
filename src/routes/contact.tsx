@@ -28,9 +28,9 @@ export const Route = createFileRoute("/contact")({
 });
 
 const contactDetails: Array<[LucideIcon, string, string]> = [
-  [Mail, "Email", "[Add confirmed divisional email]"],
-  [Phone, "Phone", "Add your phone number"],
-  [MapPin, "Location", "Nigeria · serving campuses nationwide"],
+  [Mail, "Email", "gospelpillarscampus@gmail.com"],
+  [Phone, "Phone", "+234 810 040 6149, +234 701 098 5430"],
+  [MapPin, "Location", "Nigeria"],
 ];
 
 function ContactPage() {

@@ -3,14 +3,14 @@ import { ArrowRight, Clock, MapPin, Phone } from "lucide-react";
 import { ContentPage } from "../../components/ContentPage";
 import { chapters } from "../../data/chapters";
 import { officialLinks } from "../../data/siteContent";
-import heroWorship from "../../assets/hero-worship.jpg";
+import heroLocation from "../../assets/hero_location.jpeg";
 
 export const Route = createFileRoute("/churches")({ component: ChurchesPage });
 
 function ChurchesPage() {
   return (
     <ContentPage
-      heroImage={heroWorship}
+      heroImage={heroLocation}
       eyebrow="Our churches & fellowships"
       title="Find a Gospel Pillars church or fellowship near you."
       intro="This directory is the working structure for every church, community, and campus fellowship operating under Nigeria 2 Division."

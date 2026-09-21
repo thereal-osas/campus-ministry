@@ -15,7 +15,7 @@ import { Route as ChurchesRouteImport } from './routes/churches'
 import { Route as ChurchesChapterIdRouteImport } from './routes/churches/$chapterId'
 import { Route as ConnectRouteImport } from './routes/connect'
 import { Route as ContactRouteImport } from './routes/contact'
-import { Route as EventsRouteImport } from './routes/events'
+// import { Route as EventsRouteImport } from './routes/events'
 import { Route as GalleryRouteImport } from './routes/gallery'
 import { Route as GiveRouteImport } from './routes/give'
 import { Route as LeadershipRouteImport } from './routes/leadership'
@@ -53,11 +53,11 @@ const ContactRoute = ContactRouteImport.update({
   path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
-const EventsRoute = EventsRouteImport.update({
-  id: '/events',
-  path: '/events',
-  getParentRoute: () => rootRouteImport,
-} as any)
+// const EventsRoute = EventsRouteImport.update({
+//   id: '/events',
+//   path: '/events',
+//   getParentRoute: () => rootRouteImport,
+// } as any)
 const GalleryRoute = GalleryRouteImport.update({
   id: '/gallery',
   path: '/gallery',
@@ -96,7 +96,7 @@ export interface FileRoutesByFullPath {
   '/churches/$chapterId': typeof ChurchesChapterIdRoute
   '/connect': typeof ConnectRoute
   '/contact': typeof ContactRoute
-  '/events': typeof EventsRoute
+  // '/events': typeof EventsRoute
   '/gallery': typeof GalleryRoute
   '/give': typeof GiveRoute
   '/leadership': typeof LeadershipRoute
@@ -138,49 +138,49 @@ export interface FileRoutesById {
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
-    | '/'
-    | '/about'
-    | '/churches'
-    | '/churches/$chapterId'
-    | '/connect'
-    | '/contact'
-    | '/events'
-    | '/gallery'
-    | '/give'
-    | '/leadership'
-    | '/privacy'
-    | '/resources'
-    | '/units'
+  | '/'
+  | '/about'
+  | '/churches'
+  | '/churches/$chapterId'
+  | '/connect'
+  | '/contact'
+  | '/events'
+  | '/gallery'
+  | '/give'
+  | '/leadership'
+  | '/privacy'
+  | '/resources'
+  | '/units'
   fileRoutesByTo: FileRoutesByTo
   to:
-    | '/'
-    | '/about'
-    | '/churches'
-    | '/churches/$chapterId'
-    | '/connect'
-    | '/contact'
-    | '/events'
-    | '/gallery'
-    | '/give'
-    | '/leadership'
-    | '/privacy'
-    | '/resources'
-    | '/units'
+  | '/'
+  | '/about'
+  | '/churches'
+  | '/churches/$chapterId'
+  | '/connect'
+  | '/contact'
+  | '/events'
+  | '/gallery'
+  | '/give'
+  | '/leadership'
+  | '/privacy'
+  | '/resources'
+  | '/units'
   id:
-    | '__root__'
-    | '/'
-    | '/about'
-    | '/churches'
-    | '/churches/$chapterId'
-    | '/connect'
-    | '/contact'
-    | '/events'
-    | '/gallery'
-    | '/give'
-    | '/leadership'
-    | '/privacy'
-    | '/resources'
-    | '/units'
+  | '__root__'
+  | '/'
+  | '/about'
+  | '/churches'
+  | '/churches/$chapterId'
+  | '/connect'
+  | '/contact'
+  | '/events'
+  | '/gallery'
+  | '/give'
+  | '/leadership'
+  | '/privacy'
+  | '/resources'
+  | '/units'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -302,7 +302,7 @@ const rootRouteChildren: RootRouteChildren = {
   ChurchesChapterIdRoute: ChurchesChapterIdRoute,
   ConnectRoute: ConnectRoute,
   ContactRoute: ContactRoute,
-  EventsRoute: EventsRoute,
+  // EventsRoute: EventsRoute,
   GalleryRoute: GalleryRoute,
   GiveRoute: GiveRoute,
   LeadershipRoute: LeadershipRoute,

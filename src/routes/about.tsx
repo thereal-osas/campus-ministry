@@ -1,8 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import { Reveal } from "../components/Reveal";
-import heroStudy from "../assets/hero-study.jpg";
-import galleryChoir from "../assets/gallery-choir.jpg";
+import heroAbout from "../assets/hero_about.jpeg";
+import freshers from "../assets/freshers.jpeg";
 import prophetOfficial from "../assets/prophet_official.png";
 // import galleryCommunity from "../assets/gallery-community.jpg";
 import apstBarney from "../assets/apst_barney_cropped.jpeg";
@@ -39,7 +39,7 @@ function AboutPage() {
       <section
         className="page-intro"
         style={{
-          backgroundImage: `linear-gradient(90deg, color-mix(in oklab, var(--brand) 88%, transparent), color-mix(in oklab, var(--brand) 38%, transparent)), url(${heroStudy})`,
+          backgroundImage: `linear-gradient(90deg, color-mix(in oklab, var(--brand) 88%, transparent), color-mix(in oklab, var(--brand) 38%, transparent)), url(${heroAbout})`,
         }}
       >
         <div className="site-container">
@@ -53,7 +53,7 @@ function AboutPage() {
         <div className="site-container grid items-center gap-12 md:grid-cols-2">
           <Reveal>
             <img
-              src={heroStudy}
+              src={heroAbout}
               alt="Gospel Pillars members studying the Bible together"
               width={1920}
               height={1088}
@@ -159,7 +159,7 @@ function AboutPage() {
                 <div className="mt-7 space-y-4 text-lg leading-8 text-sand/75">
                   <p>
                     Apostle Barney Bashorun leads Gospel Pillars Campus Ministry (Nigeria 2 Division), serving the churches, communities, and fellowships entrusted to this growing expression of the ministry. His role is to provide pastoral direction, strengthen leaders, and help carry the ministry’s vision into new communities, from local churches to campus fellowships. Under his leadership, Nigeria 2 Division continues to grow through worship, teaching, fellowship, and spiritual transformation.
-                    
+
                   </p>
                   <p>
                     His role is to provide pastoral direction, strengthen
@@ -179,7 +179,7 @@ function AboutPage() {
         <div className="site-container grid items-center gap-10 md:grid-cols-12">
           <Reveal className="md:col-span-5">
             <img
-              src={galleryChoir}
+              src={freshers}
               alt="Gospel Pillars members worshipping together"
               loading="lazy"
               width={1024}
@@ -190,11 +190,11 @@ function AboutPage() {
           <Reveal className="md:col-span-7">
             <p className="eyebrow text-gold">There is room for you</p>
             <h2 className="mt-4 font-display text-4xl text-ink md:text-5xl">
-              Find family in your community.
+              Find family in your campus.
             </h2>
             <p className="mt-5 max-w-xl text-lg leading-8 text-ink/70">
               Whether you are looking for a church, a campus fellowship, or a
-              place to help establish a new chapter, we would love to hear from
+              place to help grow, we would love to hear from
               you.
             </p>
             <Link to="/contact" className="mt-8 button-primary">
