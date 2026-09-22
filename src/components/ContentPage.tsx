@@ -40,16 +40,22 @@ export function ContentCardGrid({ cards }: { cards: ContentCard[] }) {
     <div className="content-card-grid">
       {cards.map((card) => (
         <article key={card.title} className="content-card">
-          {card.image && <img src={card.image} alt="" className="content-card-image" />}
-          {card.label && <p className="eyebrow text-gold">{card.label}</p>}
-          <h2 className="mt-3 font-display text-2xl text-ink">{card.title}</h2>
-          <p className="mt-3 text-sm leading-7 text-ink/70">{card.description}</p>
-          {card.children}
-          {card.href && (
-            <a href={card.href} target="_blank" rel="noreferrer" className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-brand">
-              Learn more <ArrowUpRight size={15} />
-            </a>
+          {card.image && (
+            <div className="content-card-media">
+              <img src={card.image} alt="" className="content-card-image" />
+            </div>
           )}
+          <div className="content-card-body">
+            {card.label && <p className="eyebrow text-gold">{card.label}</p>}
+            <h2 className="mt-3 font-display text-2xl text-ink">{card.title}</h2>
+            <p className="mt-3 text-sm leading-7 text-ink/70">{card.description}</p>
+            {card.children}
+            {card.href && (
+              <a href={card.href} target="_blank" rel="noreferrer" className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-brand">
+                Learn more <ArrowUpRight size={15} />
+              </a>
+            )}
+          </div>
         </article>
       ))}
     </div>

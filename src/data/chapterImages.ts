@@ -1,3 +1,11 @@
+import aau1 from "../assets/gallery/aau1.jpeg"
+import aau2 from "../assets/gallery/aau2.jpeg"
+import aau3 from "../assets/gallery/aau3.jpeg"
+import aau4 from "../assets/gallery/aau4.jpeg"
+import aau5 from "../assets/gallery/aau5.jpeg"
+import aau6 from "../assets/gallery/aau6.jpeg"
+import aau7 from "../assets/gallery/aau7.jpeg"
+
 import abraka1 from "../assets/gallery/abraka1.jpeg";
 import abraka2 from "../assets/gallery/abraka2.jpeg";
 import abraka3 from "../assets/gallery/abraka3.jpeg";
@@ -37,6 +45,17 @@ import ibadan14 from "../assets/gallery/ibadan14.jpeg";
 import ibadan15 from "../assets/gallery/ibadan15.jpeg";
 import ibadan16 from "../assets/gallery/ibadan16.jpeg";
 import ibadan17 from "../assets/gallery/ibadan17.jpeg";
+
+import iuo1 from "../assets/gallery/iuo1.jpeg"
+import iuo2 from "../assets/gallery/iuo2.jpeg"
+import iuo3 from "../assets/gallery/iuo3.jpeg"
+import iuo4 from "../assets/gallery/iuo4.jpeg"
+import iuo5 from "../assets/gallery/iuo5.jpeg"
+import iuo6 from "../assets/gallery/iuo6.jpeg"
+import iuo7 from "../assets/gallery/iuo7.jpeg"
+import iuo8 from "../assets/gallery/iuo8.jpeg"
+import iuo9 from "../assets/gallery/iuo9.jpeg"
+
 
 import ugbowo1 from "../assets/gallery/ugbowo1.jpeg";
 import ugbowo2 from "../assets/gallery/ugbowo2.jpeg";
@@ -141,10 +160,24 @@ const specificChapterPhotos: Record<string, ChapterPhoto[]> = {
     { src: uniben11, alt: "GPCF UNIBEN", caption: "Festus Iyayi Hall, UNIBEN" },
   ],
   "gospel-pillars-campus-fellowship-igbinedion-university-okada": [
-    { src: picPlaceholder, alt: "GPCF IUO", caption: "Sunday Service" },
+    { src: iuo1, alt: "GPCF IUO", caption: "Sunday Service" },
+    { src: iuo2, alt: "GPCF IUO", caption: "Sunday Service" },
+    { src: iuo3, alt: "GPCF IUO", caption: "Sunday Service" },
+    { src: iuo4, alt: "GPCF IUO", caption: "Sunday Service" },
+    { src: iuo5, alt: "GPCF IUO", caption: "Sunday Service" },
+    { src: iuo6, alt: "GPCF IUO", caption: "Sunday Service" },
+    { src: iuo7, alt: "GPCF IUO", caption: "Sunday Service" },
+    { src: iuo8, alt: "GPCF IUO", caption: "Sunday Service" },
+    { src: iuo9, alt: "GPCF IUO", caption: "Sunday Service" },
   ],
   "gospel-pillars-campus-fellowship-ambrose-alli-university": [
-    { src: picPlaceholder, alt: "GPCF AAU", caption: "Sunday Service" },
+    { src: aau1, alt: "GPCF AAU", caption: "Sunday Service" },
+    { src: aau2, alt: "GPCF AAU", caption: "Sunday Service" },
+    { src: aau3, alt: "GPCF AAU", caption: "Sunday Service" },
+    { src: aau4, alt: "GPCF AAU", caption: "Sunday Service" },
+    { src: aau5, alt: "GPCF AAU", caption: "Sunday Service" },
+    { src: aau6, alt: "GPCF AAU", caption: "Sunday Service" },
+    { src: aau7, alt: "GPCF AAU", caption: "Sunday Service" },
   ],
   "gospel-pillars-campus-fellowship-auchi": [
     { src: picPlaceholder, alt: "GPCF AAU", caption: "Sunday Service" },

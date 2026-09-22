@@ -24,7 +24,7 @@ const mapPoints = [
 export function NigeriaMap() {
   return (
     <div className="map-stage" aria-label="Chapter locations across Nigeria">
-      <svg viewBox={nigeriaMap.viewBox} className="nigeria-map" role="img" aria-label="Map of Nigeria showing chapter locations">
+      <svg viewBox={nigeriaMap.viewBox} preserveAspectRatio="xMidYMid meet" className="nigeria-map" role="img" aria-label="Map of Nigeria showing chapter locations">
         <g className="nigeria-states">
           {(nigeriaMap.locations as NigeriaLocation[]).map((location) => (
             <path key={location.id} d={location.path} aria-label={location.name} />

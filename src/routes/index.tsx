@@ -1,13 +1,13 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useState } from "react";
-import { ArrowRight, ChevronDown, Mail, MapPin, Phone } from "lucide-react";
+import { useMemo, useState } from "react";
+import { ArrowRight, Clock, MapPin, Phone } from "lucide-react";
 import { NigeriaMap } from "../components/NigeriaMap";
 import { Reveal } from "../components/Reveal";
 import { chapters } from "../data/chapters";
 import { galleryImages } from "../data/gallery";
 import apst from "../assets/apst.jpeg"
-import prophet from "../assets/prophet.png"
 import prophet4 from "../assets/prophet4.png"
+import prophetOfficial from "../assets/prophet_official.png"
 import yaba2 from "../assets/gallery/yaba2.jpeg";
 import yaba3 from "../assets/yaba3.jpeg";
 import ibadan13 from "../assets/gallery/ibadan13.jpeg"
@@ -27,15 +27,49 @@ export const Route = createFileRoute("/")({
   }), component: HomePage,
 });
 
+const regions = ["All", ...Array.from(new Set(chapters.map((c) => c.region)))];
+
+function contactHref(contact: string) {
+  if (contact.includes("@")) return `mailto:${contact}`;
+  const first = (contact.split(",")[0] ?? contact).trim();
+  const digits = first.replace(/[^\d+]/g, "");
+  return digits ? `tel:${digits}` : "#";
+}
+
 function HomePage() {
-  const [openChapter, setOpenChapter] = useState<string | null>(null);
+  const [activeRegion, setActiveRegion] = useState("All");
+
+  const filteredChapters = useMemo(
+    () => (activeRegion === "All" ? chapters : chapters.filter((c) => c.region === activeRegion)),
+    [activeRegion],
+  );
+
+  const groupedChapters = useMemo(() => {
+    const groups = new Map<string, typeof chapters>();
+    for (const chapter of filteredChapters) {
+      const list = groups.get(chapter.region) ?? [];
+      list.push(chapter);
+      groups.set(chapter.region, list);
+    }
+    return Array.from(groups.entries());
+  }, [filteredChapters]);
 
   return <>
     <section className="relative h-[calc(100svh-5rem)] min-h-[590px] max-h-[820px] overflow-hidden">
       <div className="absolute inset-0">
-        {[prophet4, apst, ibadan13, yaba2, yaba3].map((src, index) => <img key={src} src={src} alt="" className={`hero-slide hero-slide-${index + 1} absolute inset-0 h-full w-full object-cover`} width={1920} height={1088} fetchPriority={index === 0 ? "high" : "auto"} />)}
+        {[prophet4, apst, ibadan13, yaba2, yaba3].map((src, index) => (
+          <img
+            key={src}
+            src={src}
+            alt=""
+            className={`hero-slide hero-slide-${index + 1} absolute inset-0 h-full w-full object-cover object-center`}
+            decoding={index === 0 ? "sync" : "async"}
+            fetchPriority={index === 0 ? "high" : "low"}
+          />
+        ))}
       </div>
-      <div className="absolute inset-0 bg-gradient-to-t from-brand via-brand/45 to-brand/5" />
+      <div className="absolute inset-0 bg-black/35" />
+      <div className="absolute inset-0 bg-gradient-to-t from-brand/90 via-brand/35 to-brand/15" />
       <div className="site-container relative z-10 flex h-full flex-col justify-end pb-12 md:pb-16">
         <p className="eyebrow mb-5 text-sand/80">{chapters.length} locations · one growing family</p>
         <h1 className="max-w-5xl font-display text-5xl leading-[1.03] text-sand md:text-7xl lg:text-[5.6rem]">Rooted in the Word,<br />for the <em className="font-normal text-gold">community</em>, and <em className="font-normal text-gold">campuses</em></h1>
@@ -65,88 +99,134 @@ function HomePage() {
       </div>
     </section>
 
-    <section id="chapters" className="relative overflow-hidden bg-brand py-20 md:py-28">
+    <section id="chapters" className="relative bg-brand py-20 md:py-28">
       <div className="site-container">
-        <Reveal><p className="eyebrow text-gold">Our footprint</p><div className="mt-4 flex flex-wrap items-end justify-between gap-5"><h2 className="max-w-2xl font-display text-4xl leading-tight text-sand md:text-5xl">Find Gospel Pillars near you.</h2><span className="font-mono text-xs uppercase text-sand/50">{chapters.length} locations and growing</span></div></Reveal>
-        <div className="chapters-layout mt-12">
-          <Reveal className="rounded-lg border border-sand/20 bg-sand/10 p-4 sm:p-6 backdrop-blur-xl">
-            <div className="flex justify-between border-b border-sand/15 pb-4">
-              <span className="text-sand">Chapter directory</span>
-              <span className="font-mono text-xs text-sand/60">{chapters.length} active</span>
+        <Reveal>
+          <p className="eyebrow text-gold">Our footprint</p>
+          <div className="mt-4 flex flex-wrap items-end justify-between gap-5">
+            <h2 className="max-w-2xl font-display text-4xl leading-tight text-sand md:text-5xl">Find Gospel Pillars near you.</h2>
+            <span className="font-mono text-xs uppercase text-sand/50">{chapters.length} locations and growing</span>
+          </div>
+        </Reveal>
+
+        <div className="chapters-layout mt-10">
+          <Reveal className="chapters-map-panel min-w-0 order-1 lg:order-2">
+            <div className="chapters-map-card">
+              <div className="flex items-center justify-between gap-3">
+                <p className="text-sand">Where we are planted</p>
+                <span className="font-mono text-[10px] uppercase text-sand/50">Nigeria</span>
+              </div>
+              <NigeriaMap />
             </div>
-            <div className="chapter-list divide-y divide-sand/10">
-              {chapters.map((chapter) => {
-                const isOpen = openChapter === chapter.id;
+          </Reveal>
+
+          <Reveal className="chapters-directory min-w-0 order-2 lg:order-1">
+            <div className="chapter-region-bar" role="tablist" aria-label="Filter by region">
+              {regions.map((region) => {
+                const count = region === "All" ? chapters.length : chapters.filter((c) => c.region === region).length;
+                const short = region === "All" ? "All" : region.replace(" Region", "");
                 return (
-                  <div key={chapter.id} className="chapter-item">
-                    <button
-                      type="button"
-                      className="chapter-toggle"
-                      aria-expanded={isOpen}
-                      onClick={() => setOpenChapter(isOpen ? null : chapter.id)}
-                    >
-                      <span className="flex min-w-0 items-center gap-3">
-                        <MapPin size={17} className="shrink-0 text-gold" />
-                        <span className="min-w-0 text-left">
-                          <span className="block text-sand" style={{ wordBreak: 'break-word', overflowWrap: 'anywhere' }}>{chapter.name}</span>
-                          <span className="mt-1 block font-mono text-[10px] uppercase text-sand/50">
-                            {chapter.city} · {chapter.state}
-                          </span>
-                        </span>
-                      </span>
-                      <ChevronDown
-                        size={17}
-                        className={`shrink-0 text-sand/60 transition-transform ${isOpen ? "rotate-180" : ""}`}
-                      />
-                    </button>
-                    {isOpen && (
-                      <div className="chapter-details">
-                        <p>
-                          <strong>Address</strong>
-                          {chapter.address}
-                        </p>
-                        <p>
-                          <strong>Service time</strong>
-                          {chapter.serviceTime}
-                        </p>
-                        <p>
-                          <strong>Contact</strong>
-                          <a href={`mailto:${chapter.contact}`}>
-                            <Phone size={13} />
-                            {chapter.contact}
-                          </a>
-                        </p>
-                        <div className="mt-3 pt-2">
-                          <Link
-                            to="/churches/$chapterId"
-                            params={{ chapterId: chapter.id }}
-                            className="inline-flex items-center gap-1.5 text-xs font-semibold text-gold hover:underline"
-                          >
-                            View chapter photos &amp; details <ArrowRight size={13} />
-                          </Link>
-                        </div>
-                      </div>
-                    )}
-                  </div>
+                  <button
+                    key={region}
+                    type="button"
+                    role="tab"
+                    aria-selected={activeRegion === region}
+                    className={`chapter-region-chip${activeRegion === region ? " is-active" : ""}`}
+                    onClick={() => setActiveRegion(region)}
+                  >
+                    <span>{short}</span>
+                    <em>{count}</em>
+                  </button>
                 );
               })}
             </div>
-            <Link to="/contact" className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-gold">
+
+            <div className="chapter-blocks">
+              {groupedChapters.map(([region, regionChapters]) => (
+                <div key={region} className="chapter-region-group">
+                  {activeRegion === "All" && (
+                    <p className="chapter-region-label">{region.replace(" Region", "")}</p>
+                  )}
+                  <div className="chapter-block-grid">
+                    {regionChapters.map((chapter) => (
+                      <article key={chapter.id} className="chapter-block">
+                        <div className="chapter-block-top">
+                          <MapPin size={16} className="shrink-0 text-gold" aria-hidden />
+                          <div className="min-w-0">
+                            <p className="chapter-block-place">{chapter.city} · {chapter.state}</p>
+                            <h3 className="chapter-block-title">{chapter.name}</h3>
+                          </div>
+                        </div>
+                        <ul className="chapter-block-meta">
+                          <li>
+                            <MapPin size={13} aria-hidden />
+                            <span>{chapter.address}</span>
+                          </li>
+                          <li>
+                            <Clock size={13} aria-hidden />
+                            <span>{chapter.serviceTime}</span>
+                          </li>
+                          <li>
+                            <Phone size={13} aria-hidden />
+                            <a href={contactHref(chapter.contact)}>{chapter.contact}</a>
+                          </li>
+                        </ul>
+                        <Link
+                          to="/churches/$chapterId"
+                          params={{ chapterId: chapter.id }}
+                          className="chapter-block-link"
+                        >
+                          View chapter <ArrowRight size={13} />
+                        </Link>
+                      </article>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <Link to="/contact" className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-gold">
               Ask about another campus <ArrowRight size={15} />
             </Link>
-          </Reveal>
-          <Reveal className="rounded-lg border border-sand/20 bg-sand/10 p-4 sm:p-6 backdrop-blur-xl chapters-map-panel">
-            <div className="flex items-center justify-between">
-              <p className="text-sand">Where we are planted</p>
-              <span className="font-mono text-[10px] uppercase text-sand/50">Nigeria</span>
-            </div>
-            <NigeriaMap />
           </Reveal>
         </div>
       </div>
     </section>
 
     <section className="bg-sand py-20 md:py-28"><div className="site-container"><Reveal><p className="eyebrow text-gold">The rhythm of campus life</p><h2 className="mt-4 max-w-2xl font-display text-4xl text-ink md:text-5xl">Gather. Grow. Go.</h2></Reveal><div className="mt-12 divide-y divide-brand/15 border-y border-brand/15">{[["Weekly", "Bible study & prayer", "A thoughtful space for Scripture, questions, prayer, and friendships."], ["Every semester", "Campus awake", "Students from across faculties gathering for worship, empowerment and the Word."], ["Across chapters", "Leadership & outreach", "Equipping students to serve their campus and carry Christ everywhere."]].map(([date, title, copy]) => <Reveal key={title} className="grid gap-3 py-7 md:grid-cols-12 md:items-center"><span className="font-mono text-xs uppercase text-gold md:col-span-2">{date}</span><h3 className="font-display text-2xl text-ink md:col-span-4">{title}</h3><p className="text-sm leading-6 text-ink/60 md:col-span-6">{copy}</p></Reveal>)}</div></div></section>
+
+    <section className="bg-sand-deep py-20 md:py-28">
+      <div className="site-container grid items-center gap-10 md:grid-cols-12 md:gap-14">
+        <Reveal className="md:col-span-5">
+          <img
+            src={prophetOfficial}
+            alt="Prophet Isaiah Macwealth, Senior Pastor of Gospel Pillars International"
+            loading="lazy"
+            width={800}
+            height={1000}
+            className="aspect-[4/5] w-full rounded-lg object-cover object-top"
+          />
+        </Reveal>
+        <Reveal className="md:col-span-7">
+          <p className="eyebrow text-gold">Senior Pastor</p>
+          <h2 className="mt-4 max-w-2xl font-display text-4xl leading-tight text-ink md:text-5xl">Prophet Isaiah Macwealth</h2>
+          <p className="mt-6 max-w-2xl text-lg leading-8 text-ink/75">
+            Dr. Isaiah Macwealth, also known as Isaiah Wealth, is a lover of Jesus, a renowned author, philanthropist, and Senior Pastor of Gospel Pillars International Churches worldwide. He is also the founder of the OneSound Revival Fellowship, which runs a TV house, a Bible College, and a charity foundation.
+          </p>
+          <p className="mt-4 max-w-2xl text-base leading-7 text-ink/65">
+            A prophet of God, his daily aim is to seek alignment with Heaven to deliver revelatory teachings, prophecies, and exhortations from the heart of the Father to people, nations, tongues, and kings.
+          </p>
+          <a
+            href="https://gospelpillars.org/about-isaiah-macwealth/"
+            target="_blank"
+            rel="noreferrer"
+            className="mt-8 button-primary"
+          >
+            Learn more <ArrowRight size={16} />
+          </a>
+        </Reveal>
+      </div>
+    </section>
 
     <section className="bg-brand py-20 md:py-28"><div className="site-container grid items-center gap-10 md:grid-cols-12"><Reveal className="md:col-span-7"><p className="eyebrow text-gold">U-Genius</p><h2 className="mt-4 max-w-2xl font-display text-4xl leading-tight text-sand md:text-5xl">Unlock your academic genius within.</h2><p className="mt-6 max-w-2xl text-lg leading-8 text-sand/80">U-Genius raises a generation of scholars who pursue academic excellence, lead with character, and create meaningful impact through mentorship, community, and skill-building.</p><a href="https://www.ugenius.ng/" target="_blank" rel="noreferrer" className="mt-8 button-primary">Visit U-Genius <ArrowRight size={16} /></a></Reveal><Reveal className="md:col-span-5"><img src={ugenius} alt="Students working together in a creative studio" loading="lazy" width={1024} height={1024} className="aspect-square w-full rounded-lg object-cover" /></Reveal></div></section>
 

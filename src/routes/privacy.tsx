@@ -1,13 +1,13 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ContentPage } from "../components/ContentPage";
-import galleryBible from "../assets/gallery-bible.jpg";
+import privacy from "../assets/privacy.jpg";
 
 export const Route = createFileRoute("/privacy")({ component: PrivacyPage });
 
 function PrivacyPage() {
   return (
     <ContentPage
-      heroImage={galleryBible}
+      heroImage={privacy}
       eyebrow="Privacy policy"
       title="Your information should be handled with care."
       intro="This page explains how Gospel Pillars collects, uses, and protects your personal data as a visitor or member of our ministry platforms."
