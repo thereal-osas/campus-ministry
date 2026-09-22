@@ -110,36 +110,40 @@ function HomePage() {
         </Reveal>
 
         <div className="chapters-layout mt-10">
-          <Reveal className="chapters-map-panel min-w-0 order-1 lg:order-2">
-            <div className="chapters-map-card">
-              <div className="flex items-center justify-between gap-3">
-                <p className="text-sand">Where we are planted</p>
-                <span className="font-mono text-[10px] uppercase text-sand/50">Nigeria</span>
+          <div className="chapters-map-panel min-w-0 order-1 lg:order-2">
+            <Reveal>
+              <div className="chapters-map-card">
+                <div className="flex items-center justify-between gap-3">
+                  <p className="text-sand">Where we are planted</p>
+                  <span className="font-mono text-[10px] uppercase text-sand/50">Nigeria</span>
+                </div>
+                <NigeriaMap />
               </div>
-              <NigeriaMap />
-            </div>
-          </Reveal>
+            </Reveal>
+          </div>
 
-          <Reveal className="chapters-directory min-w-0 order-2 lg:order-1">
-            <div className="chapter-region-bar" role="tablist" aria-label="Filter by region">
-              {regions.map((region) => {
-                const count = region === "All" ? chapters.length : chapters.filter((c) => c.region === region).length;
-                const short = region === "All" ? "All" : region.replace(" Region", "");
-                return (
-                  <button
-                    key={region}
-                    type="button"
-                    role="tab"
-                    aria-selected={activeRegion === region}
-                    className={`chapter-region-chip${activeRegion === region ? " is-active" : ""}`}
-                    onClick={() => setActiveRegion(region)}
-                  >
-                    <span>{short}</span>
-                    <em>{count}</em>
-                  </button>
-                );
-              })}
-            </div>
+          <div className="chapters-directory min-w-0 order-2 lg:order-1">
+            <Reveal>
+              <div className="chapter-region-bar" role="tablist" aria-label="Filter by region">
+                {regions.map((region) => {
+                  const count = region === "All" ? chapters.length : chapters.filter((c) => c.region === region).length;
+                  const short = region === "All" ? "All" : region.replace(" Region", "");
+                  return (
+                    <button
+                      key={region}
+                      type="button"
+                      role="tab"
+                      aria-selected={activeRegion === region}
+                      className={`chapter-region-chip${activeRegion === region ? " is-active" : ""}`}
+                      onClick={() => setActiveRegion(region)}
+                    >
+                      <span>{short}</span>
+                      <em>{count}</em>
+                    </button>
+                  );
+                })}
+              </div>
+            </Reveal>
 
             <div className="chapter-blocks">
               {groupedChapters.map(([region, regionChapters]) => (
@@ -188,7 +192,7 @@ function HomePage() {
             <Link to="/contact" className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-gold">
               Ask about another campus <ArrowRight size={15} />
             </Link>
-          </Reveal>
+          </div>
         </div>
       </div>
     </section>
